@@ -6,6 +6,7 @@
   "engines": {
     "vscode": "^1.79.0"
   },
+  "repository": {"url": "https://github.com/IzaanAnwar/boiler-vscode.git"},
   "categories": [
     "Other"
   ],
