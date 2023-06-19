@@ -2,7 +2,7 @@
   "name": "boiler",
   "displayName": "Boiler",
   "description": "boiler plate genarator",
-  "version": "0.0.1",
+  "version": "0.0.02",
   "engines": {
     "vscode": "^1.79.0"
   },
@@ -11,7 +11,7 @@
   "categories": [
     "Other"
   ],
-  "icon": "./src/icons/boiler.png",
+  "icon": "icons/boiler.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
