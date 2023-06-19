@@ -1,71 +1,50 @@
-# boiler README
+# Boiler Extension
 
-This is the README for your extension "boiler". After writing up a brief description, we recommend including the following sections.
+The Boiler extension is a Visual Studio Code extension that helps you insert boilerplate code into your files based on their file extensions. It provides two commands: "Hello World" and "Boiler".
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### Hello World
 
-For example if there is an image subfolder under your extension project workspace:
+The "Hello World" command displays a message box with the text "Hello World from Boiler!".
 
-\!\[feature X\]\(images/feature-x.png\)
+To execute the "Hello World" command, you can:
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+- Use the command palette (Ctrl/Cmd + Shift + P) and search for "Boiler: Hello World".
+- Click on the status bar item with the text "Boiler Hello World".
 
-## Requirements
+### Boiler
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+The "Boiler" command inserts boilerplate code into the active text editor based on the file extension of the current file. It supports Java and C file extensions.
 
-## Extension Settings
+To execute the "Boiler" command, you can:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+- Use the command palette (Ctrl/Cmd + Shift + P) and search for "Boiler: Boiler".
+- Right-click on the active text editor and select "Boiler".
 
-For example:
+## Usage
 
-This extension contributes the following settings:
+1. Open a file with the desired file extension (e.g., `.java`, `.c`).
+2. Execute the "Boiler" command as described above.
+3. The extension will insert the appropriate boilerplate code into the active text editor based on the file extension.
+4. The placeholder `{{className}}` in the boilerplate code will be replaced with the capitalized name of the file (without the extension).
+5. Save the file to apply the changes.
 
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
+# Release Notes
 
-## Known Issues
+## Version 1.0.0
 
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- Initial release of the Boiler extension.
+- Added "Hello World" command to display a message box with the text "Hello World from Boiler!".
+- Added "Boiler" command to insert boilerplate code based on the file extension into the active text editor.
+- Supports Java and C file extensions.
+- Replaces the `{{className}}` placeholder in the boilerplate code with the capitalized name of the file (without the extension).
 
-## Release Notes
 
-Users appreciate release notes as you update your extension.
+## Contributing
 
-### 1.0.0
+Contributions to the Boiler extension are welcome! If you have any bug reports, feature requests, or suggestions, please open an issue on the [GitHub repository](https://github.com/IzaanAnwar/boiler-vscode.git).
 
-Initial release of ...
+## License
 
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+The Boiler extension is open-source software.
