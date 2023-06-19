@@ -11,7 +11,7 @@
   "categories": [
     "Other"
   ],
-  "icon": "/src/icons/boiler.png",
+  "icon": "./src/icons/boiler.png",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
