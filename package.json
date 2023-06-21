@@ -17,8 +17,8 @@
   "contributes": {
     "commands": [
       {
-        "command": "boiler.helloWorld",
-        "title": "Hello World"
+        "command": "boiler.greet",
+        "title": "Greet"
       },
       {
         "command": "boiler.boiler",
