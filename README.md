@@ -32,13 +32,13 @@ To execute the "Boiler" command, you can:
 
 # Release Notes
 
-## Version 1.0.0
+## Version 0.0.1
 
 - Initial release of the Boiler extension.
 - Added "Hello World" command to display a message box with the text "Hello World from Boiler!".
 - Added "Boiler" command to insert boilerplate code based on the file extension into the active text editor.
 - Supports Java and C file extensions.
-- Replaces the `{{className}}` placeholder in the boilerplate code with the capitalized name of the file (without the extension).
+- Replaces the `{className}` placeholder in the boilerplate code with the capitalized name of the file (without the extension).
 
 
 ## Contributing

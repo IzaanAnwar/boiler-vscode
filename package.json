@@ -2,7 +2,7 @@
   "name": "boiler",
   "displayName": "Boiler",
   "description": "boiler plate genarator",
-  "version": "0.0.02",
+  "version": "0.0.1",
   "engines": {
     "vscode": "^1.79.0"
   },

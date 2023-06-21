@@ -2,6 +2,8 @@
 // Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
+
+
 /**
  * Writes the provided content to the current buffer in the specified active editor.
  * The content is inserted at the current cursor position.
@@ -26,6 +28,34 @@ function writeToCurrBuffer  (content:string, activeEditor:vscode.TextEditor): vo
 function capitalizeFirstLetter(str: string): string {
 	return str.charAt(0).toUpperCase() + str.slice(1);
 }  
+
+
+function getBoiler(fileExtension: string, className:string):string {
+	let boilerFile:string;
+	if (fileExtension === '.java') {
+		boilerFile = 
+`package com.test;
+public class ${className} {
+	public static void main(String[] args) {
+		System.out.println("Hello World");		
+	}
+		
+}`;			} 
+		else if(fileExtension === '.c') {
+			boilerFile = 
+`#include <stdio.h>
+#include <stdlib.h>
+
+
+int main(void) {
+				
+	return 0;
+}`;
+	} else {
+		boilerFile = "";
+	}
+	return boilerFile;
+}
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
@@ -54,30 +84,15 @@ export function activate(context: vscode.ExtensionContext) {
 			const activeFileUri = activeTextEditor.document.uri;
 			const activeFilePath = activeFileUri.fsPath;
 			const fileExtension = activeFilePath.substring(activeFilePath.lastIndexOf("."));	
-			let boilerFile:vscode.Uri | undefined ;
-			if (fileExtension === '.java') {
-				boilerFile = vscode.Uri.file(`${context.extensionPath}/src/boilerCode/java_boiler_code.txt`);
-			} else if(fileExtension === '.c') {
-				boilerFile = vscode.Uri.file(`${context.extensionPath}/src/boilerCode/c_boiler_code.txt`);
-			} else {
-				vscode.window.showInformationMessage('Boiler Not Found!!!');
-			}
-			if(boilerFile) {
-				try {
-					const fileName = activeTextEditor.document.fileName;
-					const className = capitalizeFirstLetter(vscode.workspace.asRelativePath(fileName).replace(fileExtension, ''));
-					const boilerFileContent = await vscode.workspace.fs.readFile(boilerFile);
-					const boilerText = Buffer.from(boilerFileContent).toString();
-					const boilerCode = Buffer.from(boilerFileContent).toString().replace('{{className}}', className);
-					writeToCurrBuffer(boilerCode, activeTextEditor);
-				} catch (error:any) {
-					vscode.window.showInformationMessage(error.message);
-				}
-				
-			} else {
-				vscode.window.showInformationMessage('No active text editor found');
-			  }
 			
+			const fileName = activeTextEditor.document.fileName;
+			const className = capitalizeFirstLetter(vscode.workspace.asRelativePath(fileName).replace(fileExtension, ''));
+			const boilerCode = getBoiler(fileExtension, className);
+			if (boilerCode === "") {
+				vscode.window.showInformationMessage('Boiler not found for file type.');
+			}
+			
+			writeToCurrBuffer(boilerCode, activeTextEditor);
 
 		} else {
 			vscode.window.showInformationMessage('Boiler in your mums ars');
